@@ -11,6 +11,13 @@ mod tests {
         assert_eq!(result, 4);
     }
 
+    #[test]
+    fn test_config() {
+        let config = get_config();
+        assert_eq!(config.query, "#trending");
+        assert_eq!(config.path, "test.mp4");
+    }
+
     mod get_list_of_videos {
         use super::*;
         async fn init() -> Vec<VideoInfo> {
